@@ -711,7 +711,7 @@
 						</div>
 						<div class="header-right d-flex align-items-center">
 							<div class="input-group search-area">
-								<input type="text" class="form-control" placeholder="Search here...">
+								<input type="text" class="form-control" placeholder="Search Harvest ID...">
 								<span class="input-group-text"><a href="javascript:void(0)">
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 											xmlns="http://www.w3.org/2000/svg">
@@ -1157,7 +1157,7 @@
 							<span class="nav-text">Dashboard</span>
 						</a>
 					</li>
-					<li><a href="plantation-management.html" class="mm-active" aria-expanded="false">
+					<li><a href="plantation-management.html" class="" aria-expanded="false">
 							<div class="menu-icon">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
@@ -1191,7 +1191,7 @@
 							<span class="nav-text">Field Management</span>
 						</a>
 					</li>
-					<li><a href="harvest-management.html" class="" aria-expanded="false">
+					<li><a href="harvest-management.html" class="mm-active" aria-expanded="false">
 							<div class="menu-icon">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
@@ -1258,7 +1258,7 @@
 				<div class="row page-titles mx-0 mb-3">
 					<div class="col-sm-6 p-md-0">
 						<div class="welcome-text">
-							<h4>Plantation List</h4>
+							<h4>Harvest Management</h4>
 						</div>
 					</div>
 					<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -1313,93 +1313,101 @@
 									<table class="table table-responsive-sm">
 										<thead>
 											<tr>
-												<th>Plantation Name</th>
-												<th>Location</th>
-												<th>Area Size</th>
-												<th>Plantation Type</th>
-												<th>Contact Number</th>
+												<th>Harvest ID</th>
+												<th>Field Name</th>
+												<th>Crop & Variety</th>
+												<th>Quantity</th>
+												<th>Quality Grade</th>
+												<th>Harvest Date</th>
+												<th>Worker/Supervisor</th>
+												<th>Storage Location</th>
 												<th>Status</th>
 												<th>Action</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td>Green Valley Estate</td>
-												<td>Nuwara Eliya</td>
-												<td>50 Acres</td>
-												<td>Carrot</td>
-												<td>+94 77 123 4567</td>
-												<td><span class="badge badge-success">Active</span></td>
+												<td><strong>HRV-001</strong></td>
+												<td>Field A-101</td>
+												<td>Carrot (New Kuroda)</td>
+												<td>1,200 kg</td>
+												<td>Grade A</td>
+												<td>2024-06-15</td>
+												<td>Sunil Perera</td>
+												<td>Warehouse A</td>
+												<td><span class="badge badge-success">Sold</span></td>
 												<td>
 													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i
-																class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i
-																class="fa fa-trash"></i></a>
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
 											<tr>
-												<td>Sunny Side Plantation</td>
-												<td>Nuwara Eliya</td>
-												<td>120 Acres</td>
-												<td>Cabbage</td>
-												<td>+94 71 987 6543</td>
-												<td><span class="badge badge-warning">In-Progress</span></td>
+												<td><strong>HRV-002</strong></td>
+												<td>Field B-205</td>
+												<td>Cabbage (Green Coronet)</td>
+												<td>850 kg</td>
+												<td>Premium</td>
+												<td>2024-06-18</td>
+												<td>Kamal Gunaratne</td>
+												<td>Cold Storage 1</td>
+												<td><span class="badge badge-primary">In Storage</span></td>
 												<td>
 													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i
-																class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i
-																class="fa fa-trash"></i></a>
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>
+												</td>
+											</tr>
+											<tr
+												<td><strong>HRV-003</strong></td>
+												<td>Field C-312</td>
+												<td>Potato (Granola)</td>
+												<td>2.5 Tons</td>
+												<td>Standard</td>
+												<td>2024-06-20</td>
+												<td>Nimali Silva</td>
+												<td>Warehouse B</td>
+												<td><span class="badge badge-warning">Processing</span></td>
+												<td>
+													<div class="d-flex">
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
 											<tr>
-												<td>Highland Farm</td>
-												<td>Welimada</td>
-												<td>80 Acres</td>
-												<td>Potato</td>
-												<td>+94 76 555 1234</td>
-												<td><span class="badge badge-danger">Inactive</span></td>
+												<td><strong>HRV-004</strong></td>
+												<td>Field D-404</td>
+												<td>Leeks (Long)</td>
+												<td>500 kg</td>
+												<td>Grade A</td>
+												<td>2024-06-22</td>
+												<td>Ajith Kumara</td>
+												<td>Fresh Market Hub</td>
+												<td><span class="badge badge-success">Sold</span></td>
 												<td>
 													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i
-																class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i
-																class="fa fa-trash"></i></a>
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
 											<tr>
-												<td>Golden Leaf Farm</td>
-												<td>Nuwara Eliya</td>
-												<td>65 Acres</td>
-												<td>Leeks</td>
-												<td>+94 70 111 2222</td>
-												<td><span class="badge badge-success">Active</span></td>
+												<td><strong>HRV-005</strong></td>
+												<td>Field E-520</td>
+												<td>Tomato (Thilina)</td>
+												<td>1.2 Tons</td>
+												<td>Premium</td>
+												<td>2024-06-25</td>
+												<td>Rani Jayasinghe</td>
+												<td>Cold Storage 2</td>
+												<td><span class="badge badge-primary">In Storage</span></td>
 												<td>
 													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i
-																class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i
-																class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>Royal Farms</td>
-												<td>Dambulla</td>
-												<td>45 Acres</td>
-												<td>Tomato</td>
-												<td>+94 78 333 4444</td>
-												<td><span class="badge badge-success">Active</span></td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i
-																class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i
-																class="fa fa-trash"></i></a>
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
