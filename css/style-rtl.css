@@ -13506,7 +13506,7 @@ label {
   justify-content: center;
   display: flex;
   align-items: center;
-  border-right: 1px solid #c8c8c8;
+  border-right: 1px solid #7e3f98;
 }
 @media only screen and (max-width: 47.9375rem) {
   .header-right .notification_dropdown {
@@ -17327,7 +17327,7 @@ label {
 
 [data-sidebarbg=color_3][data-theme-version=dark],
 [data-sidebarbg=color_3] {
-  --sidebar-bg: #452B90;
+  --sidebar-bg: white;
 }
 [data-sidebarbg=color_3][data-theme-version=dark] .menu-toggle .deznav .metismenu li > ul,
 [data-sidebarbg=color_3] .menu-toggle .deznav .metismenu li > ul {
