@@ -53,6 +53,20 @@
         _page-user-lock
 
 */
+
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'Helvetica', sans-serif !important;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&amp;display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
@@ -20353,7 +20367,7 @@ label {
 
 [data-sidebarbg="color_2"][data-theme-version="dark"],
 [data-sidebarbg="color_2"] {
-  --sidebar-bg: #7e3f98;
+  --sidebar-bg: #500071;
 }
 
 [data-sidebarbg="color_2"][data-theme-version="dark"] .menu-toggle .deznav .metismenu li>ul,
