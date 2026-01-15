@@ -75,10 +75,14 @@
         ***********************************-->
 		<div class="nav-header">
 			<a href="index.html" class="brand-logo">
-				<img src="images/limo-logo.png" alt="Limo Plus Logo" style="max-height: 50px; margin-top: 10px;  max-width: 150px">
+				<img id="logo1" src="images/limo-logo.png" alt="Limo Plus Logo"
+					style="max-height:50px; margin-top:10px; max-width:150px;">
+
+				<img id="logo2" src="images/logo.jpg" alt="Limo Plus Logo"
+					style="max-height:40px; margin-top:10px; margin-bottom:10px; display:none;">
 			</a>
 			<div class="nav-control">
-				<div class="hamburger">
+				<div class="hamburger" id="hamburgerBtn">
 					<span class="line">
 						<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
@@ -92,6 +96,39 @@
 				</div>
 			</div>
 		</div>
+		<style>
+			@media (max-width: 768px) {
+				#logo1 {
+					display: none !important;
+				}
+
+				#logo2 {
+					display: block !important;
+				}
+			}
+		</style>
+		<script>
+			const hamburger = document.getElementById('hamburgerBtn');
+			const logo1 = document.getElementById('logo1');
+			const logo2 = document.getElementById('logo2');
+
+			let isToggled = false;
+
+			hamburger.addEventListener('click', () => {
+
+				if (window.innerWidth <= 768) return;
+
+				isToggled = !isToggled;
+
+				if (isToggled) {
+					logo1.style.display = 'none';
+					logo2.style.display = 'block';
+				} else {
+					logo1.style.display = 'block';
+					logo2.style.display = 'none';
+				}
+			});
+		</script>
 		<!--**********************************
             Nav header end
         ***********************************-->
