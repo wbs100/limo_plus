@@ -59,7 +59,13 @@ let dataSet = [
 	var table = $('#projects-tbl').DataTable({
 		//dom: 'Bfrtip',
 		'dom': 'ZBfrltip',
-		buttons: [],
+		buttons: [
+
+			{
+				extend: 'excel', text: '<i class="fa-solid fa-file-excel"></i> Export Report',
+				className: 'btn btn-sm border-0'
+			}
+		],
 		searching: false,
 		pageLength: 5,
 		select: false,
