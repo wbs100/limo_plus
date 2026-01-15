@@ -55,17 +55,7 @@
 */
 
 
-@font-face {
-    font-family: 'Helvetica';
-    src: url('fonts/Helvetica.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
-
-body {
-    font-family: 'Helvetica', sans-serif !important;
-}
 
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&amp;display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800");
