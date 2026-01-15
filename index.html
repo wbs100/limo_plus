@@ -69,6 +69,139 @@
 			animation: pulse-green 1.5s infinite;
 		}
 	</style>
+
+	<style>
+		/* Responsive Overrides */
+		@media (max-width: 768px) {
+
+			/* Sidebar Handling */
+			.deznav {
+				left: -100%;
+				/* Hide sidebar off-screen */
+				width: 100%;
+				/* Or fixed width */
+				position: fixed;
+				transition: all 0.3s ease;
+				z-index: 999;
+				background: #fff;
+				height: 100vh;
+				top: 0;
+				margin-top: 0 !important;
+				/* Override inline style */
+				padding-top: 80px;
+				/* Space for header */
+			}
+
+			/* Show sidebar when toggled */
+			#main-wrapper.menu-toggle .deznav {
+				left: 0;
+			}
+
+			/* Content Body */
+			.content-body {
+				margin-left: 0 !important;
+				padding-top: 90px;
+				/* Clear header */
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			/* Header Adjustments */
+			.nav-header {
+				width: 100% !important;
+				/* Full width header bar */
+				position: fixed;
+				top: 0;
+				z-index: 1002;
+				/* Higher than sidebar */
+			}
+
+			.header {
+				width: 100% !important;
+				margin-left: 0 !important;
+				padding-left: 15px;
+				position: fixed;
+				top: 0;
+				z-index: 999;
+				background: transparent;
+			}
+
+			.brand-logo {
+				padding-left: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+			}
+
+			/* Hamburger Position: Top Right */
+			.nav-control {
+				right: 15px;
+				top: 15px;
+				position: fixed;
+				/* Fixed to viewport */
+				z-index: 1003;
+				/* Highest priority */
+			}
+
+			/* Hide extra header elements on small screens if they crowd */
+			.header-left {
+				display: none;
+			}
+
+			.dashboard_bar {
+				font-size: 1.2rem;
+				display: none;
+				/* Hide Title on mobile to save space */
+			}
+		}
+
+		@media (max-width: 576px) {
+
+			/* Mobile tweaks */
+			.card-header h4 {
+				font-size: 1rem;
+			}
+
+			.revenue-date span {
+				font-size: 12px;
+			}
+
+			.revenue-date h4 {
+				font-size: 1.2rem;
+			}
+
+			/* Chart adjustments to prevent overflow */
+			.chartBar,
+			#overiewChart,
+			#redial {
+				min-height: 200px;
+				width: 100% !important;
+				overflow: hidden;
+			}
+
+			canvas {
+				max-width: 100%;
+			}
+
+			/* DataTable Responsive Wrapper behavior */
+			.table-responsive {
+				display: block;
+				width: 100%;
+				overflow-x: auto;
+				-webkit-overflow-scrolling: touch;
+			}
+
+			/* Font adjustments */
+			h3 {
+				font-size: 1.5rem;
+			}
+
+			h4 {
+				font-size: 1.2rem;
+			}
+		}
+	</style>
+
 </head>
 
 <body>
@@ -129,28 +262,7 @@
 				}
 			}
 		</style>
-		<script>
-			const hamburger = document.getElementById('hamburgerBtn');
-			const logo1 = document.getElementById('logo1');
-			const logo2 = document.getElementById('logo2');
 
-			let isToggled = false;
-
-			hamburger.addEventListener('click', () => {
-
-				if (window.innerWidth <= 768) return;
-
-				isToggled = !isToggled;
-
-				if (isToggled) {
-					logo1.style.display = 'none';
-					logo2.style.display = 'block';
-				} else {
-					logo1.style.display = 'block';
-					logo2.style.display = 'none';
-				}
-			});
-		</script>
 		<!--**********************************
             Nav header end
         ***********************************-->
@@ -774,21 +886,52 @@
 							<span class="nav-text">Plantation Management</span>
 						</a>
 					</li>
-					<li><a href="field-management.html" class="" aria-expanded="false">
+					<li>
+						<a href="field-management.html" aria-expanded="false">
 							<div class="menu-icon">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
-									<rect x="3" y="3" width="18" height="18" rx="2" stroke="#90959F" stroke-width="2"
+
+									<!-- Ground -->
+									<path d="M3 17H21" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+
+									<!-- Field lines -->
+									<path d="M5 17C6 13 9 10 12 10C15 10 18 13 19 17" stroke="#90959F" stroke-width="2"
 										stroke-linecap="round" stroke-linejoin="round" />
-									<path d="M3 9H21" stroke="#90959F" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" />
-									<path d="M9 21V9" stroke="#90959F" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" />
+
+									<path d="M8 17C9 14.5 10.5 13 12 13C13.5 13 15 14.5 16 17" stroke="#90959F"
+										stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
 								</svg>
 							</div>
 							<span class="nav-text">Field Management</span>
 						</a>
 					</li>
+
+					<li>
+						<a href="crop-management.html" aria-expanded="false">
+							<div class="menu-icon">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+
+									<!-- Stem -->
+									<path d="M12 22V10" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+
+									<!-- Left Leaf -->
+									<path d="M12 12C8 12 6 9 5 6C8 6 11 7 12 10" stroke="#90959F" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round" />
+
+									<!-- Right Leaf -->
+									<path d="M12 12C16 12 18 9 19 6C16 6 13 7 12 10" stroke="#90959F" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+							<span class="nav-text">Crop Management</span>
+						</a>
+					</li>
+
 					<li><a href="harvest-management.html" class="" aria-expanded="false">
 							<div class="menu-icon">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -975,13 +1118,13 @@
 		<div class="content-body">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xl-9 col-xxl-12">
+					<div class="col-xl-9 col-xxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 						<div class="row">
 							<div class="col-xl-12">
 								<div class="row">
 									<div class="col-xl-6">
 										<div class="row">
-											<div class="col-xl-6 col-sm-6">
+											<div class="col-xl-6 col-md-6 col-12">
 												<div class="card bg-primary text-white">
 													<div class="card-header border-0 flex-wrap">
 														<div class="revenue-date">
@@ -1024,7 +1167,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-sm-6">
+											<div class="col-xl-6 col-md-6 col-12">
 												<div class="card bg-secondary text-white">
 													<div class="card-header border-0">
 														<div class="revenue-date">
@@ -1072,7 +1215,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-sm-6">
+											<div class="col-xl-6 col-md-6 col-12">
 												<div class="card">
 													<div class="card-body depostit-card">
 														<div
@@ -1100,7 +1243,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-sm-6">
+											<div class="col-xl-6 col-md-6 col-12">
 												<div class="card same-card">
 													<div class="card-body depostit-card p-0">
 														<div
@@ -1123,7 +1266,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-3 col-sm-6">
+									<div class="col-xl-3 col-md-6 col-12">
 										<div class="card">
 											<div class="card-header border-0 pb-0">
 												<h4 class="heading mb-0">Stock Alerts</h4>
@@ -1154,7 +1297,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-3 col-sm-6">
+									<div class="col-xl-3 col-md-6 col-12">
 										<div class="card">
 											<div class="card-body">
 												<div id="redial"></div>
@@ -1355,6 +1498,37 @@
 		});
 	</script>
 
+
+
+	<script>
+		// Responsive Hamburger Logic
+		document.addEventListener("DOMContentLoaded", function () {
+			const hamburger = document.getElementById('hamburgerBtn');
+			const mainWrapper = document.getElementById('main-wrapper');
+			const logo1 = document.getElementById('logo1');
+			const logo2 = document.getElementById('logo2');
+			let isToggled = false;
+
+			if (hamburger) {
+				hamburger.addEventListener('click', function () {
+					// Toggle sidebar visibility on mobile
+					mainWrapper.classList.toggle('menu-toggle');
+
+					// Toggle logo concept for larger screens if needed, or maintain existing logic
+					if (window.innerWidth > 768) {
+						isToggled = !isToggled;
+						if (isToggled) {
+							if (logo1) logo1.style.display = 'none';
+							if (logo2) logo2.style.display = 'block';
+						} else {
+							if (logo1) logo1.style.display = 'block';
+							if (logo2) logo2.style.display = 'none';
+						}
+					}
+				});
+			}
+		});
+	</script>
 </body>
 
 
