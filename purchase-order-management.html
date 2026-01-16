@@ -12,22 +12,19 @@
 	<meta name="author" content="DexignZone">
 	<meta name="robots" content="index, follow">
 
-	<meta name="keywords"
-		content="Limo Plus, Management System, Agriculture, Harvest, Sales, Stock, Admin Dashboard">
+	<meta name="keywords" content="Limo Plus, Management System, Agriculture, Harvest, Sales, Stock, Admin Dashboard">
 
 	<meta name="description"
 		content="Limo Plus is a comprehensive management system designed to streamline your agricultural, harvest, stock, and sales operations. Optimize your productivity with our intuitive platform.">
 
-	<meta property="og:title"
-		content="Limo Plus - Management System">
+	<meta property="og:title" content="Limo Plus - Management System">
 	<meta property="og:description"
 		content="Limo Plus is a comprehensive management system designed to streamline your agricultural, harvest, stock, and sales operations. Optimize your productivity with our intuitive platform.">
 	<meta property="og:image" content="social-image.png">
 
 	<meta name="format-detection" content="telephone=no">
 
-	<meta name="twitter:title"
-		content="Limo Plus - Management System">
+	<meta name="twitter:title" content="Limo Plus - Management System">
 	<meta name="twitter:description"
 		content="Limo Plus is a comprehensive management system designed to streamline your agricultural, harvest, stock, and sales operations. Optimize your productivity with our intuitive platform.">
 	<meta name="twitter:image" content="social-image.png">
@@ -36,38 +33,81 @@
 	<!-- MOBILE SPECIFIC -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- FAVICONS ICON -->
-	<link rel="icon" type="image/jpeg" href="images/logo.jpg"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="%2328a745" d="M272 96c-78.6 0-145.1 51.5-167.7 122.5c33.6-17 71.5-26.5 111.7-26.5h88c8.8 0 16 7.2 16 16s-7.2 16-16 16H288 216s0 0 0 0c-16.6 0-32.7 1.9-48.3 5.4c-25.9 5.9-49.9 16.4-71.4 30.7c0 0 0 0 0 0C38.3 298.8 0 364.9 0 440v16c0 13.3 10.7 24 24 24s24-10.7 24-24V440c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448c97.2 0 176-78.8 176-176S369.2 96 272 96z"/></svg>'>
+	<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+
 
 	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 	<link href="vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
 	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link href="vendor/datatables/css/buttons.dataTables.min.css" rel="stylesheet">
 	<link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="vendor/select2/css/select2.min.css" rel="stylesheet">
 
 	<!-- Style css -->
 	<link class="main-css" href="css/style.css" rel="stylesheet">
 
-<style>
+	<style>
 		@keyframes pulse-green {
-			0% { transform: scale(1); opacity: 1; }
-			50% { transform: scale(1.1); opacity: 0.8; }
-			100% { transform: scale(1); opacity: 1; }
+			0% {
+				transform: scale(1);
+				opacity: 1;
+			}
+
+			50% {
+				transform: scale(1.1);
+				opacity: 0.8;
+			}
+
+			100% {
+				transform: scale(1);
+				opacity: 1;
+			}
 		}
+
 		.animate-logo {
 			animation: pulse-green 1.5s infinite;
 		}
+
+		/* Select2 Styling to match Template Inputs */
+		.select2-container .select2-selection--single {
+			height: 45px !important;
+			border: 1px solid #f0f1f5;
+			/* Matching typical template border */
+			border-radius: 0.75rem;
+			/* rounded items */
+			display: flex;
+			align-items: center;
+		}
+
+		.select2-container--default .select2-selection--single .select2-selection__rendered {
+			color: #3d4465;
+			padding-left: 20px;
+			font-size: 0.875rem;
+		}
+
+		.select2-container--default .select2-selection--single .select2-selection__arrow {
+			height: 45px;
+			top: 0;
+			right: 15px;
+		}
+
+		.select2-container--default .select2-selection--single {
+			background-color: #fff;
+			border-color: #f0f1f5;
+		}
 	</style>
-    </head>
+</head>
 
 <body>
 
 	<!--*******************
         Preloader start
     ********************-->
-	<div id="preloader" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: #fff; z-index: 99999; position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
+	<div id="preloader"
+		style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: #fff; z-index: 99999; position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
 		<div class="text-center fa-beat-fade">
 			<img src="images/logo.jpg" alt="Limo Plus Logo" style="max-height: 100px;">
-            <p class="text-muted mt-3">Loading...</p>
+			<p class="text-muted mt-3">Loading...</p>
 		</div>
 	</div>
 	</div>
@@ -741,7 +781,7 @@
 									</a></span>
 							</div> -->
 							<ul class="navbar-nav">
-<!--
+								<!--
 
 								<li class="nav-item dropdown notification_dropdown">
 									<a class="nav-link bell dz-theme-mode" href="javascript:void(0);">
@@ -1029,7 +1069,7 @@
 								</li>
 								
 -->
-<li class="nav-item ps-3">
+								<li class="nav-item ps-3">
 									<div class="dropdown header-profile2">
 										<a class="nav-link" href="javascript:void(0);" role="button"
 											data-bs-toggle="dropdown" aria-expanded="false">
@@ -1172,7 +1212,8 @@
 					</li>
 					<li><a href="invoice-create.html" class="" aria-expanded="false">
 							<div class="menu-icon">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd"
 										d="M6 2C4.34315 2 3 3.34315 3 5V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V7.82843C21 7.03278 20.6839 6.26972 20.1213 5.70711L17.2929 2.87868C16.7303 2.31607 15.9672 2 15.1716 2H6ZM8 8C7.44772 8 7 8.44772 7 9C7 9.55228 7.44772 10 8 10H16C16.5523 10 17 9.55228 17 9C17 8.44772 16.5523 8 16 8H8ZM7 13C7 12.4477 7.44772 12 8 12H16C16.5523 12 17 12.4477 17 13C17 13.5523 16.5523 14 16 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H12C12.5523 18 13 17.5523 13 17C13 16.4477 12.5523 16 12 16H8Z"
 										fill="#90959F" />
@@ -1264,11 +1305,18 @@
 					</li>
 					<li><a href="purchase-order-management.html" class="" aria-expanded="false">
 							<div class="menu-icon">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-									<path d="M7 7H17" stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-									<path d="M7 12H17" stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-									<path d="M7 17H13" stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+										stroke="#90959F" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M7 7H17" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M7 12H17" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path d="M7 17H13" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
 								</svg>
 							</div>
 							<span class="nav-text">Purchase Order Management</span>
@@ -1396,7 +1444,7 @@
 						</a>
 					</li>
 				</ul>
-				
+
 				<div class="copyright">
 					<p>2025 © All Rights Reserved | Limo Plus | Designed & Developed by Silicon Radon Networks (Pvt)
 						Ltd.</p>
@@ -1421,126 +1469,154 @@
 						</div>
 					</div>
 					<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-						<button type="button" class="btn btn-primary btn-rounded"><i class="fa fa-plus me-2"></i>Create Purchase Order</button>
+						<!-- Breadcrumb or extra actions can go here -->
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<div class="card">
-							<div class="card-header border-0 pb-0 d-block">
-								<h5 class="mb-3">Filter Purchase Orders</h5>
-								<form>
-									<div class="row">
-										<div class="col-md-3 mb-3">
-											<input type="text" class="form-control" placeholder="PO Number">
-										</div>
-										<div class="col-md-3 mb-3">
-											<input type="text" class="form-control" placeholder="Supplier Name">
-										</div>
-										<div class="col-md-3 mb-3">
-											<div class="form-group mb-0">
-												<select class="default-select form-control wide">
-													<option selected>Status</option>
-													<option>Pending</option>
-													<option>Approved</option>
-													<option>Rejected</option>
-													<option>Completed</option>
+						<!-- SECTION 1: Available Crops (Default View) -->
+						<div id="crops-section">
+							<div class="card">
+								<div class="card-header border-0 pb-0 d-block">
+									<h5 class="mb-3">Available Crops</h5>
+								</div>
+								<div class="card-body">
+									<div class="table-responsive">
+										<table class="table table-responsive-sm" id="availableCropsTable">
+											<thead>
+												<tr>
+													<th>Crop ID</th>
+													<th>Crop Name</th>
+													<th>Image</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><strong>CRP-001</strong></td>
+													<td>Carrot</td>
+													<td><img src="images/avatar/1.jpg" width="40" alt="Carrot"
+															class="rounded-circle"></td>
+													<td>
+														<button type="button"
+															class="btn btn-primary btn-sm create-order-btn"
+															data-crop="Carrot">Create Purchase Order</button>
+													</td>
+												</tr>
+												<tr>
+													<td><strong>CRP-002</strong></td>
+													<td>Potato</td>
+													<td><img src="images/avatar/2.jpg" width="40" alt="Potato"
+															class="rounded-circle"></td>
+													<td>
+														<button type="button"
+															class="btn btn-primary btn-sm create-order-btn"
+															data-crop="Potato">Create Purchase Order</button>
+													</td>
+												</tr>
+												<tr>
+													<td><strong>CRP-003</strong></td>
+													<td>Leeks</td>
+													<td><img src="images/avatar/3.jpg" width="40" alt="Leeks"
+															class="rounded-circle"></td>
+													<td>
+														<button type="button"
+															class="btn btn-primary btn-sm create-order-btn"
+															data-crop="Leeks">Create Purchase Order</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- SECTION 2: Order Creation (Hidden by default) -->
+						<div id="order-creation-section" style="display: none;">
+
+							<!-- Top Action Bar -->
+							<div class="d-flex align-items-center mb-3">
+								<button class="btn btn-secondary btn-sm me-3" id="backToCropsBtn"><i
+										class="fa fa-arrow-left me-2"></i>Back to Crops List</button>
+								<h4 class="mb-0" id="orderCreationTitle">Creating Order</h4>
+							</div>
+
+							<!-- Input Form & Table Container -->
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Order Details</h5>
+								</div>
+								<div class="card-body">
+									<form id="orderForm">
+										<div class="row">
+											<div class="col-md-4 mb-3">
+												<label class="mb-1"><strong>Crop Name</strong></label>
+												<input type="text" class="form-control" id="inputCropName" readonly>
+											</div>
+											<div class="col-md-4 mb-3">
+												<label class="mb-1"><strong>Plantation Name</strong></label>
+												<select class="form-control" id="inputPlantationName">
+													<option value="" disabled selected>Select a Plantation</option>
+													<option value="Green Valley Estate">Green Valley Estate</option>
+													<option value="Limo Main Plantation">Limo Main Plantation</option>
+													<option value="Sunrise Farms">Sunrise Farms</option>
+													<option value="Hilltop Garden">Hilltop Garden</option>
+													<option value="RiverSide Organic">RiverSide Organic</option>
+													<option value="Highland Fields">Highland Fields</option>
 												</select>
 											</div>
+											<div class="col-md-4 mb-3">
+												<label class="mb-1"><strong>Crop Variety</strong></label>
+												<input type="text" class="form-control" id="inputVariety"
+													placeholder="e.g. New Kuroda">
+											</div>
+											<div class="col-md-3 mb-3">
+												<label class="mb-1"><strong>Grade</strong></label>
+												<select class="form-control" id="inputGrade">
+													<option value="A">Grade A</option>
+													<option value="B">Grade B</option>
+													<option value="C">Grade C</option>
+												</select>
+											</div>
+											<div class="col-md-3 mb-3">
+												<label class="mb-1"><strong>Quantity (kg)</strong></label>
+												<input type="number" class="form-control" id="inputQuantity"
+													placeholder="0">
+											</div>
+											<div class="col-md-3 mb-3">
+												<label class="mb-1"><strong>Harvest Date</strong></label>
+												<input type="date" class="form-control" id="inputHarvestDate">
+											</div>
+											<div class="col-md-3 mb-3 d-flex align-items-end">
+												<button type="button" class="btn btn-primary w-100" id="addToListBtn"><i
+														class="fa fa-plus me-2"></i>Add to List</button>
+											</div>
 										</div>
-										<div class="col-md-12 text-end">
-											<button type="submit" class="btn btn-primary me-2">Search</button>
-											<button type="button" class="btn btn-light text-dark">Clear</button>
-										</div>
+									</form>
+
+									<hr class="my-4">
+
+									<h5 class="mb-3">Purchase Order Stock List</h5>
+									<div class="table-responsive">
+										<table class="table table-responsive-sm" id="stockListTable">
+											<thead>
+												<tr>
+													<th>PO ID</th>
+													<th>Crop Name</th>
+													<th style="width: 250px;">Plantation</th>
+													<th>Variety</th>
+													<th>Grade</th>
+													<th>Quantity (kg)</th>
+													<th>Harvest Date</th>
+													<th>Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!-- Dynamic rows will be added here -->
+											</tbody>
+										</table>
 									</div>
-								</form>
-							</div>
-							<div class="card-body">
-								<div class="table-responsive">
-									<table class="table table-responsive-sm">
-										<thead>
-											<tr>
-												<th>PO Number</th>
-												<th>Supplier Name</th>
-												<th>Date</th>
-												<th>Status</th>
-												<th>Total Amount</th>
-												<th>Action</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><strong>PO-001</strong></td>
-												<td>AgriWorld Supplies</td>
-												<td>2024-07-15</td>
-												<td><span class="badge badge-warning">Pending</span></td>
-												<td>$1,250.00</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><strong>PO-002</strong></td>
-												<td>GreenGrow Fertilizers</td>
-												<td>2024-07-14</td>
-												<td><span class="badge badge-success">Approved</span></td>
-												<td>$3,400.00</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><strong>PO-003</strong></td>
-												<td>FarmMachinery Co.</td>
-												<td>2024-07-12</td>
-												<td><span class="badge badge-danger">Rejected</span></td>
-												<td>$12,000.00</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><strong>PO-004</strong></td>
-												<td>SeedPlus Inc.</td>
-												<td>2024-07-10</td>
-												<td><span class="badge badge-success">Completed</span></td>
-												<td>$850.00</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td><strong>PO-005</strong></td>
-												<td>EcoSafe Pesticides</td>
-												<td>2024-07-08</td>
-												<td><span class="badge badge-warning">Pending</span></td>
-												<td>$2,100.00</td>
-												<td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
 								</div>
 							</div>
 						</div>
@@ -1548,80 +1624,173 @@
 				</div>
 			</div>
 
-			<!--**********************************
+			<!-- Modal removed -->
+		</div>
+	</div>
+
+	<!--**********************************
             Content body end
         ***********************************-->
-			<!--**********************************
+	<!--**********************************
             Footer start
         ***********************************-->
-			<div class="footer">
-				<div class="copyright">
-				<p>2025 © All Rights Reserved | Limo Plus | Designed & Developed by Silicon Radon Networks (Pvt)
-					Ltd.</p>
-			</div>
-			</div>
-			<!--**********************************
+	<div class="footer">
+		<div class="copyright">
+			<p>2025 © All Rights Reserved | Limo Plus | Designed & Developed by Silicon Radon Networks (Pvt)
+				Ltd.</p>
+		</div>
+	</div>
+	<!--**********************************
             Footer end
         ***********************************-->
 
-			<!--**********************************
+	<!--**********************************
            Support ticket button start
         ***********************************-->
 
-			<!--**********************************
+	<!--**********************************
            Support ticket button end
         ***********************************-->
 
 
-		</div>
-		<!--**********************************
+	</div>
+	<!--**********************************
         Main wrapper end
     ***********************************-->
 
-		<!--**********************************
+	<!--**********************************
         Scripts
     ***********************************-->
-		<!-- Required vendors -->
-		<script src="vendor/global/global.min.js"></script>
-		<script src="vendor/chart-js/chart.bundle.min.js"></script>
-		<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-		<script src="vendor/apexchart/apexchart.js"></script>
+	<!-- Required vendors -->
+	<script src="vendor/global/global.min.js"></script>
+	<script src="vendor/chart-js/chart.bundle.min.js"></script>
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="vendor/apexchart/apexchart.js"></script>
 
-		<!-- Dashboard 1 -->
-		<script src="js/dashboard/dashboard-1.js"></script>
-		<script src="vendor/draggable/draggable.js"></script>
-		<script src="vendor/swiper/js/swiper-bundle.min.js"></script>
+	<!-- Dashboard 1 -->
+	<script src="js/dashboard/dashboard-1.js"></script>
+	<script src="vendor/draggable/draggable.js"></script>
+	<script src="vendor/swiper/js/swiper-bundle.min.js"></script>
 
-		<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-		<script src="vendor/datatables/js/dataTables.buttons.min.js"></script>
-		<script src="vendor/datatables/js/buttons.html5.min.js"></script>
-		<script src="vendor/datatables/js/jszip.min.js"></script>
-		<script src="js/plugins-init/datatables.init.js"></script>
+	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="vendor/datatables/js/dataTables.buttons.min.js"></script>
+	<script src="vendor/datatables/js/buttons.html5.min.js"></script>
+	<script src="vendor/datatables/js/jszip.min.js"></script>
+	<script src="js/plugins-init/datatables.init.js"></script>
 
-		<!-- Apex Chart -->
+	<!-- Apex Chart -->
 
-		<script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
-		<script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+	<script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 
 
-		<!-- Vectormap -->
-		<script src="vendor/jqvmap/js/jquery.vmap.min.js"></script>
-		<script src="vendor/jqvmap/js/jquery.vmap.world.js"></script>
-		<script src="vendor/jqvmap/js/jquery.vmap.usa.js"></script>
-		<script src="js/custom.min.js"></script>
-		<script src="js/deznav-init.js"></script>
-		<script src="js/demo.js"></script>
-		<script src="js/styleSwitcher.js"></script>
-		<script>
-			jQuery(document).ready(function () {
-				setTimeout(function () {
-					dzSettingsOptions.version = 'light';
-					new dzSettings(dzSettingsOptions);
+	<!-- Vectormap -->
+	<script src="vendor/jqvmap/js/jquery.vmap.min.js"></script>
+	<script src="vendor/jqvmap/js/jquery.vmap.world.js"></script>
+	<script src="vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+	<script src="js/custom.min.js"></script>
+	<script src="js/deznav-init.js"></script>
+	<script src="vendor/select2/js/select2.full.min.js"></script>
+	<script src="js/demo.js"></script>
+	<script src="js/styleSwitcher.js"></script>
+	<script>
+		jQuery(document).ready(function () {
+			setTimeout(function () {
+				dzSettingsOptions.version = 'light';
+				new dzSettings(dzSettingsOptions);
 
-					setCookie('version', 'light');
-				}, 1500)
+				setCookie('version', 'light');
+			}, 1500)
+		});
+
+		// Available Crops & Purchase Order Logic - Two Section View
+		document.addEventListener("DOMContentLoaded", function () {
+
+			// Elements
+			const cropsSection = document.getElementById('crops-section');
+			const orderSection = document.getElementById('order-creation-section');
+			const backBtn = document.getElementById('backToCropsBtn');
+			const orderTitle = document.getElementById('orderCreationTitle');
+
+			// Initialize Select2 for Plantation Name
+			$('#inputPlantationName').select2({
+				placeholder: "Select a Plantation",
+				allowClear: true
 			});
-		</script>
+
+			const inputCropName = document.getElementById('inputCropName');
+			const addToListBtn = document.getElementById('addToListBtn');
+			const stockListTableBody = document.querySelector('#stockListTable tbody');
+
+			let poCounter = 1;
+
+			// 1. Handle "Create Purchase Order" (Show Section 2)
+			const createOrderBtns = document.querySelectorAll('.create-order-btn');
+			createOrderBtns.forEach(btn => {
+				btn.addEventListener('click', function () {
+					const cropName = this.getAttribute('data-crop');
+
+					// Update UI
+					inputCropName.value = cropName;
+					orderTitle.textContent = `Creating Order for ${cropName}`;
+
+					// Toggle Sections
+					cropsSection.style.display = 'none';
+					orderSection.style.display = 'block';
+				});
+			});
+
+			// 2. Handle "Back" Button (Show Section 1)
+			backBtn.addEventListener('click', function () {
+				cropsSection.style.display = 'block';
+				orderSection.style.display = 'none';
+			});
+
+			// 3. Handle "Add to List" Button
+			addToListBtn.addEventListener('click', function () {
+				// Gather data from new IDs
+				const cropName = document.getElementById('inputCropName').value;
+				const plantation = document.getElementById('inputPlantationName').value;
+				const variety = document.getElementById('inputVariety').value;
+				const grade = document.getElementById('inputGrade').value;
+				const quantity = document.getElementById('inputQuantity').value;
+				const harvestDate = document.getElementById('inputHarvestDate').value;
+
+				// Basic Validation
+				if (!plantation || !quantity) {
+					alert("Please fill in all required fields.");
+					return;
+				}
+
+				// Generate PO ID
+				const poID = 'PO-' + String(poCounter).padStart(3, '0');
+				poCounter++;
+
+				// Create New Row
+				const newRow = `
+					<tr>
+						<td><strong>${poID}</strong></td>
+						<td>${cropName}</td>
+						<td>${plantation}</td>
+						<td>${variety}</td>
+						<td>${grade}</td>
+						<td>${quantity}</td>
+						<td>${harvestDate}</td>
+						<td><span class="badge badge-warning">Pending</span></td>
+					</tr>
+				`;
+
+				// Append to Table
+				stockListTableBody.insertAdjacentHTML('beforeend', newRow);
+
+				// Reset Form (except Crop Name)
+				$('#inputPlantationName').val(null).trigger('change'); // Reset Select2
+				document.getElementById('inputVariety').value = '';
+				document.getElementById('inputQuantity').value = '';
+				document.getElementById('inputHarvestDate').value = '';
+			});
+		});
+	</script>
 
 </body>
 
