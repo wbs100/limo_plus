@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Title-->
+    <title>Limo Plus | Sustainable Plantation & Fresh Vegetable Supply Chain | Add Plantation</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Silicon Radon Networks">
+    <meta name="robots" content="index, follow">
+
+    <meta name="keywords" content="Limo Plus, Management System, Agriculture, Harvest, Sales, Stock, Admin Dashboard">
+
+    <meta name="description"
+        content="Limo Plus is a comprehensive management system designed to streamline your agricultural, harvest, stock, and sales operations. Optimize your productivity with our intuitive platform.">
+
+    <meta property="og:title" content="Limo Plus - Management System">
+    <meta property="og:description"
+        content="Limo Plus is a comprehensive management system designed to streamline your agricultural, harvest, stock, and sales operations. Optimize your productivity with our intuitive platform.">
+    <meta property="og:image" content="social-image.png">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="twitter:title" content="Limo Plus - Management System">
+    <meta name="twitter:description"
+        content="Limo Plus is a comprehensive management system designed to streamline your agricultural, harvest, stock, and sales operations. Optimize your productivity with our intuitive platform.">
+    <meta name="twitter:image" content="social-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FAVICONS ICON -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+
+
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="vendor/datatables/css/buttons.dataTables.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <link href="vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+    <!-- Style css -->
+    <link class="main-css" href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader"
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: #fff; z-index: 99999; position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
+        <div class="text-center fa-beat-fade">
+            <img src="images/logo.jpg" alt="Limo Plus Logo" style="max-height: 100px;">
+            <p class="text-muted mt-3">Loading...</p>
+        </div>
+    </div>
+
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img id="logo1" src="images/limo-logo.png" alt="Limo Plus Logo"
+                    style="max-height:50px; margin-top:10px; max-width:150px;">
+
+                <img id="logo2" src="images/logo.jpg" alt="Limo Plus Logo"
+                    style="max-height:40px; margin-top:10px; margin-bottom:10px; display:none;">
+            </a>
+            <div class="nav-control">
+                <div class="hamburger" id="hamburgerBtn">
+                    <span class="line">
+                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.7468 5.58925C11.0722 5.26381 11.0722 4.73617 10.7468 4.41073C10.4213 4.0853 9.89369 4.0853 9.56826 4.41073L4.56826 9.41073C4.25277 9.72622 4.24174 10.2342 4.54322 10.5631L9.12655 15.5631C9.43754 15.9024 9.96468 15.9253 10.3039 15.6143C10.6432 15.3033 10.6661 14.7762 10.3551 14.4369L6.31096 10.0251L10.7468 5.58925Z"
+                                fill="#452B90" />
+                            <path opacity="0.3"
+                                d="M16.5801 5.58924C16.9056 5.26381 16.9056 4.73617 16.5801 4.41073C16.2547 4.0853 15.727 4.0853 15.4016 4.41073L10.4016 9.41073C10.0861 9.72622 10.0751 10.2342 10.3766 10.5631L14.9599 15.5631C15.2709 15.9024 15.798 15.9253 16.1373 15.6143C16.4766 15.3033 16.4995 14.7762 16.1885 14.4369L12.1443 10.0251L16.5801 5.58924Z"
+                                fill="#452B90" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 768px) {
+                #logo1 {
+                    display: none !important;
+                }
+
+                #logo2 {
+                    display: block !important;
+                }
+            }
+        </style>
+        <script>
+            const hamburger = document.getElementById('hamburgerBtn');
+            const logo1 = document.getElementById('logo1');
+            const logo2 = document.getElementById('logo2');
+
+            let isToggled = false;
+
+            hamburger.addEventListener('click', () => {
+
+                if (window.innerWidth <= 768) return;
+
+                isToggled = !isToggled;
+
+                if (isToggled) {
+                    logo1.style.display = 'none';
+                    logo2.style.display = 'block';
+                } else {
+                    logo1.style.display = 'block';
+                    logo2.style.display = 'none';
+                }
+            });
+        </script>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Add New Plantation
+                            </div>
+                        </div>
+
+
+                        <li class="nav-item dropdown notification_dropdown">
+                            <a class="nav-link bell-link" href="javascript:void(0);">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M3.5 16.87V9.257H21.5V16.931C21.5 20.07 19.5241 22 16.3628 22H8.62733C5.49561 22 3.5 20.03 3.5 16.87ZM8.45938 14.41C8.00494 14.431 7.62953 14.07 7.60977 13.611C7.60977 13.151 7.96542 12.771 8.41987 12.75C8.86443 12.75 9.22997 13.101 9.23985 13.55C9.2596 14.011 8.90395 14.391 8.45938 14.41ZM12.5198 14.41C12.0653 14.431 11.6899 14.07 11.6701 13.611C11.6701 13.151 12.0258 12.771 12.4802 12.75C12.9248 12.75 13.2903 13.101 13.3002 13.55C13.32 14.011 12.9643 14.391 12.5198 14.41ZM16.5505 18.09C16.096 18.08 15.7305 17.7 15.7305 17.24C15.7206 16.78 16.0862 16.401 16.5406 16.391H16.5505C17.0148 16.391 17.3902 16.771 17.3902 17.24C17.3902 17.71 17.0148 18.09 16.5505 18.09ZM11.6701 17.24C11.6899 17.7 12.0653 18.061 12.5198 18.04C12.9643 18.021 13.32 17.641 13.3002 17.181C13.2903 16.731 12.9248 16.38 12.4802 16.38C12.0258 16.401 11.6701 16.78 11.6701 17.24ZM7.59989 17.24C7.61965 17.7 7.99506 18.061 8.44951 18.04C8.89407 18.021 9.24973 17.641 9.22997 17.181C9.22009 16.731 8.85456 16.38 8.40999 16.38C7.95554 16.401 7.59989 16.78 7.59989 17.24ZM15.7404 13.601C15.7404 13.141 16.096 12.771 16.5505 12.761C16.9951 12.761 17.3507 13.12 17.3705 13.561C17.3804 14.021 17.0247 14.391 16.5801 14.41C16.1257 14.42 15.7503 14.07 15.7404 13.611V13.601Z"
+                                        fill="#222B40"></path>
+                                    <path opacity="0.4"
+                                        d="M3.50336 9.2569C3.5162 8.6699 3.5656 7.5049 3.65846 7.1299C4.13267 5.0209 5.74298 3.6809 8.04485 3.4899H16.9559C19.238 3.6909 20.8681 5.0399 21.3423 7.1299C21.4342 7.4949 21.4836 8.6689 21.4964 9.2569H3.50336Z"
+                                        fill="#222B40"></path>
+                                    <path
+                                        d="M8.80489 6.59C9.23958 6.59 9.56559 6.261 9.56559 5.82V2.771C9.56559 2.33 9.23958 2 8.80489 2C8.3702 2 8.04419 2.33 8.04419 2.771V5.82C8.04419 6.261 8.3702 6.59 8.80489 6.59Z"
+                                        fill="#222B40"></path>
+                                    <path
+                                        d="M16.195 6.59C16.6198 6.59 16.9557 6.261 16.9557 5.82V2.771C16.9557 2.33 16.6198 2 16.195 2C15.7603 2 15.4343 2.33 15.4343 2.771V5.82C15.4343 6.261 15.7603 6.59 16.195 6.59Z"
+                                        fill="#222B40"></path>
+                                </svg>
+                            </a>
+                        </li>
+
+
+                        <!-- <li class="nav-item dropdown notification_dropdown">
+    <a class="nav-link bell" href="javascript:void(0);">
+        <svg id="icon-light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <rect x="0" y="0" width="24" height="24" />
+                <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" fill-rule="nonzero" />
+                <path d="M19.5,10.5 L21,10.5 C21.8284271,10.5 22.5,11.1715729 22.5,12 C22.5,12.8284271 21.8284271,13.5 21,13.5 L19.5,13.5 C18.6715729,13.5 18,12.8284271 18,12 C18,11.1715729 18.6715729,10.5 19.5,10.5 Z M16.0606602,5.87132034 L17.1213203,4.81066017 C17.7071068,4.22487373 18.6568542,4.22487373 19.2426407,4.81066017 C19.8284271,5.39644661 19.8284271,6.34619408 19.2426407,6.93198052 L18.1819805,7.99264069 C17.5961941,8.57842712 16.6464466,8.57842712 16.0606602,7.99264069 C15.4748737,7.40685425 15.4748737,6.45710678 16.0606602,5.87132034 Z M16.0606602,18.1819805 C15.4748737,17.5961941 15.4748737,16.6464466 16.0606602,16.0606602 C16.6464466,15.4748737 17.5961941,15.4748737 18.1819805,16.0606602 L19.2426407,17.1213203 C19.8284271,17.7071068 19.8284271,18.6568542 19.2426407,19.2426407 C18.6568542,19.8284271 17.7071068,19.8284271 17.1213203,19.2426407 L16.0606602,18.1819805 Z M3,10.5 L4.5,10.5 C5.32842712,10.5 6,11.1715729 6,12 C6,12.8284271 5.32842712,13.5 4.5,13.5 L3,13.5 C2.17157288,13.5 1.5,12.8284271 1.5,12 C1.5,11.1715729 2.17157288,10.5 3,10.5 Z M12,1.5 C12.8284271,1.5 13.5,2.17157288 13.5,3 L13.5,4.5 C13.5,5.32842712 12.8284271,6 12,6 C11.1715729,6 10.5,5.32842712 10.5,4.5 L10.5,3 C10.5,2.17157288 11.1715729,1.5 12,1.5 Z M12,18 C12.8284271,18 13.5,18.6715729 13.5,19.5 L13.5,21 C13.5,21.8284271 12.8284271,22.5 12,22.5 C11.1715729,22.5 10.5,21.8284271 10.5,21 L10.5,19.5 C10.5,18.6715729 11.1715729,18 12,18 Z M4.81066017,4.81066017 C5.39644661,4.22487373 6.34619408,4.22487373 6.93198052,4.81066017 L7.99264069,5.87132034 C8.57842712,6.45710678 8.57842712,7.40685425 7.99264069,7.99264069 C7.40685425,8.57842712 6.45710678,8.57842712 5.87132034,7.99264069 L4.81066017,6.93198052 C4.22487373,6.34619408 4.22487373,5.39644661 4.81066017,4.81066017 Z M4.81066017,19.2426407 C4.22487373,18.6568542 4.22487373,17.7071068 4.81066017,17.1213203 L5.87132034,16.0606602 C6.45710678,15.4748737 7.40685425,15.4748737 7.99264069,16.0606602 C8.57842712,16.6464466 8.57842712,17.5961941 7.99264069,18.1819805 L6.93198052,19.2426407 C6.34619408,19.8284271 5.39644661,19.8284271 4.81066017,19.2426407 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+            </g>
+        </svg>
+    </a>
+</li> -->
+
+                        <li class="nav-item ps-3">
+                            <div class="dropdown header-profile2">
+                                <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <div class="header-info2 d-flex align-items-center">
+                                        <div class="header-media">
+                                            <img src="images/user.jpg" alt=""
+                                                style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <div class="card border-0 mb-0">
+                                        <div class="card-header py-2">
+                                            <div class="products">
+                                                <img src="images/user.jpg" class="avatar avatar-md" alt="">
+                                                <div>
+                                                    <h6>Sahan Gamage</h6>
+                                                    <!-- <span>Web Designer</span> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body px-0 py-2">
+                                            <a href="app-profile-1.html" class="dropdown-item ai-icon ">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M11.9848 15.3462C8.11714 15.3462 4.81429 15.931 4.81429 18.2729C4.81429 20.6148 8.09619 21.2205 11.9848 21.2205C15.8524 21.2205 19.1543 20.6348 19.1543 18.2938C19.1543 15.9529 15.8733 15.3462 11.9848 15.3462Z"
+                                                        stroke="var(--primary)" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M11.9848 12.0059C14.5229 12.0059 16.58 9.94779 16.58 7.40969C16.58 4.8716 14.5229 2.81445 11.9848 2.81445C9.44667 2.81445 7.38857 4.8716 7.38857 7.40969C7.38 9.93922 9.42381 11.9973 11.9524 12.0059H11.9848Z"
+                                                        stroke="var(--primary)" stroke-width="1.42857"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+
+                                                <span class="ms-2">Profile </span>
+                                            </a>
+                                            <!-- <a href="my-project.html" class="dropdown-item ai-icon ">
+														<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+															viewBox="0 0 24 24" fill="none" stroke="currentColor"
+															stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" class="feather feather-pie-chart">
+															<path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+															<path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+														</svg>
+
+														<span class="ms-2">My Project</span><span
+															class="badge badge-sm badge-primary rounded-circle text-white ms-2">4</span>
+													</a> -->
+                                            <!-- <a href="chat.html" class="dropdown-item ai-icon ">
+														<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M17.9026 8.85114L13.4593 12.4642C12.6198 13.1302 11.4387 13.1302 10.5992 12.4642L6.11844 8.85114"
+																stroke="var(--primary)" stroke-width="1.5"
+																stroke-linecap="round" stroke-linejoin="round" />
+															<path fill-rule="evenodd" clip-rule="evenodd"
+																d="M16.9089 21C19.9502 21.0084 22 18.5095 22 15.4384V8.57001C22 5.49883 19.9502 3 16.9089 3H7.09114C4.04979 3 2 5.49883 2 8.57001V15.4384C2 18.5095 4.04979 21.0084 7.09114 21H16.9089Z"
+																stroke="var(--primary)" stroke-width="1.5"
+																stroke-linecap="round" stroke-linejoin="round" />
+														</svg>
+
+														<span class="ms-2">Message </span>
+													</a> -->
+                                            <!-- <a href="notifications.html" class="dropdown-item ai-icon ">
+														<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd"
+																d="M12 17.8476C17.6392 17.8476 20.2481 17.1242 20.5 14.2205C20.5 11.3188 18.6812 11.5054 18.6812 7.94511C18.6812 5.16414 16.0452 2 12 2C7.95477 2 5.31885 5.16414 5.31885 7.94511C5.31885 11.5054 3.5 11.3188 3.5 14.2205C3.75295 17.1352 6.36177 17.8476 12 17.8476Z"
+																stroke="var(--primary)" stroke-width="1.5"
+																stroke-linecap="round" stroke-linejoin="round" />
+															<path
+																d="M14.3888 20.8572C13.0247 22.372 10.8967 22.3899 9.51947 20.8572"
+																stroke="var(--primary)" stroke-width="1.5"
+																stroke-linecap="round" stroke-linejoin="round" />
+														</svg>
+
+														<span class="ms-2">Notification </span>
+													</a> -->
+                                        </div>
+                                        <div class="card-footer px-0 py-2">
+                                            <!-- <a href="javascript:void(0);" class="dropdown-item ai-icon ">
+														<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" clip-rule="evenodd"
+																d="M20.8066 7.62355L20.1842 6.54346C19.6576 5.62954 18.4907 5.31426 17.5755 5.83866V5.83866C17.1399 6.09528 16.6201 6.16809 16.1307 6.04103C15.6413 5.91396 15.2226 5.59746 14.9668 5.16131C14.8023 4.88409 14.7139 4.56833 14.7105 4.24598V4.24598C14.7254 3.72916 14.5304 3.22834 14.17 2.85761C13.8096 2.48688 13.3145 2.2778 12.7975 2.27802H11.5435C11.0369 2.27801 10.5513 2.47985 10.194 2.83888C9.83666 3.19791 9.63714 3.68453 9.63958 4.19106V4.19106C9.62457 5.23686 8.77245 6.07675 7.72654 6.07664C7.40418 6.07329 7.08843 5.98488 6.8112 5.82035V5.82035C5.89603 5.29595 4.72908 5.61123 4.20251 6.52516L3.53432 7.62355C3.00838 8.53633 3.31937 9.70255 4.22997 10.2322V10.2322C4.82187 10.574 5.1865 11.2055 5.1865 11.889C5.1865 12.5725 4.82187 13.204 4.22997 13.5457V13.5457C3.32053 14.0719 3.0092 15.2353 3.53432 16.1453V16.1453L4.16589 17.2345C4.41262 17.6797 4.82657 18.0082 5.31616 18.1474C5.80575 18.2865 6.33061 18.2248 6.77459 17.976V17.976C7.21105 17.7213 7.73116 17.6515 8.21931 17.7821C8.70746 17.9128 9.12321 18.233 9.37413 18.6716C9.53867 18.9488 9.62708 19.2646 9.63043 19.5869V19.5869C9.63043 20.6435 10.4869 21.5 11.5435 21.5H12.7975C13.8505 21.5 14.7055 20.6491 14.7105 19.5961V19.5961C14.7081 19.088 14.9088 18.6 15.2681 18.2407C15.6274 17.8814 16.1154 17.6806 16.6236 17.6831C16.9451 17.6917 17.2596 17.7797 17.5389 17.9393V17.9393C18.4517 18.4653 19.6179 18.1543 20.1476 17.2437V17.2437L20.8066 16.1453C21.0617 15.7074 21.1317 15.1859 21.0012 14.6963C20.8706 14.2067 20.5502 13.7893 20.111 13.5366V13.5366C19.6717 13.2839 19.3514 12.8665 19.2208 12.3769C19.0902 11.8872 19.1602 11.3658 19.4153 10.9279C19.5812 10.6383 19.8213 10.3981 20.111 10.2322V10.2322C21.0161 9.70283 21.3264 8.54343 20.8066 7.63271V7.63271V7.62355Z"
+																stroke="var(--primary)" stroke-width="1.5"
+																stroke-linecap="round" stroke-linejoin="round" />
+															<circle cx="12.175" cy="11.889" r="2.63616"
+																stroke="var(--primary)" stroke-width="1.5"
+																stroke-linecap="round" stroke-linejoin="round" />
+														</svg>
+
+														<span class="ms-2">Settings </span>
+													</a> -->
+                                            <a href="page-login.html" class="dropdown-item ai-icon">
+                                                <svg class="logout-svg" xmlns="http://www.w3.org/2000/svg" width="18"
+                                                    height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                                </svg>
+                                                <span class="ms-2 text-danger">Logout </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+            </div>
+            </nav>
+        </div>
+    </div>
+    <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+    <!--**********************************
+            Sidebar start
+        ***********************************-->
+    <div class="deznav">
+        <div class="deznav-scroll">
+            <ul class="metismenu" id="menu">
+                <!-- <li class="menu-title">YOUR COMPANY</li> -->
+                <li><a href="index.html" class="" aria-expanded="false" style="margin-top: 10px;">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.13478 20.7733V17.7156C9.13478 16.9351 9.77217 16.3023 10.5584 16.3023H13.4326C13.8102 16.3023 14.1723 16.4512 14.4393 16.7163C14.7063 16.9813 14.8563 17.3408 14.8563 17.7156V20.7733C14.8539 21.0978 14.9821 21.4099 15.2124 21.6402C15.4427 21.8705 15.756 22 16.0829 22H18.0438C18.9596 22.0024 19.8388 21.6428 20.4872 21.0008C21.1356 20.3588 21.5 19.487 21.5 18.5778V9.86686C21.5 9.13246 21.1721 8.43584 20.6046 7.96467L13.934 2.67587C12.7737 1.74856 11.1111 1.7785 9.98539 2.74698L3.46701 7.96467C2.87274 8.42195 2.51755 9.12064 2.5 9.86686V18.5689C2.5 20.4639 4.04738 22 5.95617 22H7.87229C8.55123 22 9.103 21.4562 9.10792 20.7822L9.13478 20.7733Z"
+                                    fill="#90959F" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li><a href="invoice-create.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M6 2C4.34315 2 3 3.34315 3 5V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V7.82843C21 7.03278 20.6839 6.26972 20.1213 5.70711L17.2929 2.87868C16.7303 2.31607 15.9672 2 15.1716 2H6ZM8 8C7.44772 8 7 8.44772 7 9C7 9.55228 7.44772 10 8 10H16C16.5523 10 17 9.55228 17 9C17 8.44772 16.5523 8 16 8H8ZM7 13C7 12.4477 7.44772 12 8 12H16C16.5523 12 17 12.4477 17 13C17 13.5523 16.5523 14 16 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H12C12.5523 18 13 17.5523 13 17C13 16.4477 12.5523 16 12 16H8Z"
+                                    fill="#90959F" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Invoice Management</span>
+                    </a>
+                </li>
+                <li><a href="plantation-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12 10V16" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 12L15 9" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 14L9 11" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Plantation Management</span>
+                    </a>
+                </li>
+                <li><a href="crop-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12 10V16" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 12L15 9" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 14L9 11" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Crop Management</span>
+                    </a>
+                </li>
+                <li><a href="field-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="#90959F" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3 9H21" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M9 21V9" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Field Management</span>
+                    </a>
+                </li>
+                <li><a href="harvest-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M8 12L12 16L16 12" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 8V16" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Harvest Management</span>
+                    </a>
+                </li>
+                <li><a href="sales-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 20L23 20" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M1 20L8 10L13 15L23 4" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Sales Management</span>
+                    </a>
+                </li>
+                <li><a href="stock-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3H21L20 18H4L3 3Z" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M9 3V21" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M15 3V21" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3 9H21" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3 15H21" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Stock Management</span>
+                    </a>
+                </li>
+                <li><a href="purchase-order-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M7 7H17" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M7 12H17" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M7 17H13" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Purchase Order Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="buyer-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="7" r="4" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Buyer Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fertilizer-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Fertilizers Management</span>
+                    </a>
+                </li>
+                <li class="menu-title">HR & FINANCE</li>
+                <li>
+                    <a href="employee-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M16 3.13C17.7947 3.7335 18.9951 5.4199 18.9951 7.315C18.9951 9.2101 17.7947 10.8965 16 11.5"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Employee Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="4" width="18" height="16" rx="2" stroke="#90959F" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M16 2V6" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M8 2V6" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3 10H21" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="16" cy="16" r="4" stroke="#90959F" stroke-width="2" />
+                                <path d="M16 14.5V16L17 17" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Attendance Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="salary-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="5" width="20" height="14" rx="2" stroke="#90959F" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 10H22" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M7 15H12" stroke="#90959F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Salary Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="expense-management.html" class="" aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21"
+                                    stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <circle cx="18" cy="14" r="1" fill="#90959F" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Expense Management</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="copyright">
+                <p>2025 ©️ All Rights Reserved | Limo Plus | Designed & Developed by Silicon Radon Networks (Pvt)
+                    Ltd.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+    <!--**********************************
+            Content body start
+        ***********************************-->
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <!-- row -->
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="clearfix">
+                        <div class="card card-bx profile-card author-profile m-b30">
+                            <div class="card-body">
+                                <div class="p-5">
+                                    <div class="author-profile">
+                                        <div class="author-media">
+                                            <img src="images/logo.jpg" alt="" style="object-fit: contain;">
+                                            <div class="upload-link" title="" data-toggle="tooltip"
+                                                data-placement="right" data-original-title="update">
+                                                <input type="file" class="update-flie">
+                                                <i class="fa fa-camera"></i>
+                                            </div>
+                                        </div>
+                                        <div class="author-info">
+                                            <h6 class="title">Plantation Image</h6>
+                                            <span>Upload Image</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <div class="card profile-card card-bx m-b30">
+                        <div class="card-header border-0 d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="title mb-0">Add New Plantation</h4>
+                                <p class="mb-0 text-muted small">Create a new plantation record</p>
+                            </div>
+                            <a href="plantation-management.html" class="btn btn-outline-secondary btn-sm">
+                                <i class="fa fa-arrow-left me-2"></i>Back to List
+                            </a>
+                        </div>
+                        <form class="profile-form">
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Row 1 -->
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Plantation Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Enter Plantation Name"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Location <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Enter Location" required>
+                                    </div>
+
+                                    <!-- Row 2 -->
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Area Size (Acres) <span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" placeholder="0" min="0" step="0.1"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Plantation Type / Crop <span
+                                                class="text-danger">*</span></label>
+                                        <select class="default-select form-control" required>
+                                            <option value="" disabled selected>Select Crop Type</option>
+                                            <option value="Carrot">Carrot</option>
+                                            <option value="Cabbage">Cabbage</option>
+                                            <option value="Potato">Potato</option>
+                                            <option value="Leeks">Leeks</option>
+                                            <option value="Tomato">Tomato</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Row 3 -->
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Contact Number <span
+                                                class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control" placeholder="Enter Contact Number"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Status <span class="text-danger">*</span></label>
+                                        <select class="default-select form-control" required>
+                                            <option value="Active">Active</option>
+                                            <option value="In-Progress">In-Progress</option>
+                                            <option value="Inactive">Inactive</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Row 4 -->
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Date Established <span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-hasicon mb-xl-0 mb-3">
+                                            <input class="form-control mb-xl-0 mb-3 bt-datepicker" type="text"
+                                                placeholder="DD/MM/YYYY">
+                                            <div class="icon"><i class="far fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 5 -->
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Description / Notes</label>
+                                        <textarea class="form-control" rows="4"
+                                            placeholder="Enter any additional details or notes..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer d-flex justify-content-end gap-2 border-0 pt-0">
+                                <a href="plantation-management.html" class="btn btn-outline-secondary">Cancel</a>
+                                <button type="submit" class="btn btn-primary"
+                                    style="background-color: #28a745; border-color: #28a745;">Save
+                                    Plantation</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>2025 ©️ All Rights Reserved | Limo Plus | Designed & Developed by Silicon Radon Networks (Pvt)
+                Ltd.</p>
+        </div>
+    </div>
+    <!--**********************************
+            Footer end
+        ***********************************-->
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart-js/chart.bundle.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="vendor/apexchart/apexchart.js"></script>
+
+    <!-- Dashboard 1 -->
+    <script src="js/dashboard/dashboard-1.js"></script>
+    <script src="vendor/draggable/draggable.js"></script>
+    <script src="vendor/swiper/js/swiper-bundle.min.js"></script>
+
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/js/dataTables.buttons.min.js"></script>
+    <script src="vendor/datatables/js/buttons.html5.min.js"></script>
+    <script src="vendor/datatables/js/jszip.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+    <!-- Apex Chart -->
+
+    <script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+    <script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+
+    <!-- Vectormap -->
+    <script src="vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="vendor/jqvmap/js/jquery.vmap.world.js"></script>
+    <script src="vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            setTimeout(function () {
+                dzSettingsOptions.version = 'light';
+                new dzSettings(dzSettingsOptions);
+
+                setCookie('version', 'light');
+            }, 1500)
+        });
+    </script>
+
+    <script>
+        document.querySelector('.profile-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Success!',
+                text: 'New plantation has been added successfully.',
+                icon: 'success',
+                confirmButtonColor: '#28a745',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'plantation-management.html';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
