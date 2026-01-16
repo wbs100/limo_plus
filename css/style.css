@@ -44084,9 +44084,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Forced Sidebar Layout Fix */
 .deznav {
     position: fixed !important;
-    top: 5rem !important;
+    top: 4.375rem !important;
     bottom: 0 !important;
-    height: calc(100vh - 5rem) !important;
+    height: calc(100vh - 4.375rem) !important;
     display: flex !important;
     flex-direction: column !important;
     z-index: 10 !important;
