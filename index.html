@@ -232,7 +232,7 @@
 			<a href="index.html" class="brand-logo">
 				<img id="logo1" src="images/limo-logo.png" alt="Limo Plus Logo"
 					style="max-height:50px; margin-top:10px; max-width:150px;">
-
+		
 				<img id="logo2" src="images/logo.jpg" alt="Limo Plus Logo"
 					style="max-height:40px; margin-top:10px; margin-bottom:10px; display:none;">
 			</a>
@@ -256,12 +256,34 @@
 				#logo1 {
 					display: none !important;
 				}
-
+		
 				#logo2 {
 					display: block !important;
 				}
 			}
 		</style>
+		<script>
+			const hamburger = document.getElementById('hamburgerBtn');
+			const logo1 = document.getElementById('logo1');
+			const logo2 = document.getElementById('logo2');
+
+			let isToggled = false;
+
+			hamburger.addEventListener('click', () => {
+
+				if (window.innerWidth <= 768) return;
+
+				isToggled = !isToggled;
+
+				if (isToggled) {
+					logo1.style.display = 'none';
+					logo2.style.display = 'block';
+				} else {
+					logo1.style.display = 'block';
+					logo2.style.display = 'none';
+				}
+			});
+		</script>
 
 		<!--**********************************
             Nav header end
@@ -1487,48 +1509,6 @@
 	<script src="js/deznav-init.js"></script>
 	<script src="js/demo.js"></script>
 	<script src="js/styleSwitcher.js"></script>
-	<script>
-		jQuery(document).ready(function () {
-			setTimeout(function () {
-				dzSettingsOptions.version = 'light';
-				new dzSettings(dzSettingsOptions);
-
-				setCookie('version', 'light');
-			}, 1500)
-		});
-	</script>
-
-
-
-	<script>
-		// Responsive Hamburger Logic
-		document.addEventListener("DOMContentLoaded", function () {
-			const hamburger = document.getElementById('hamburgerBtn');
-			const mainWrapper = document.getElementById('main-wrapper');
-			const logo1 = document.getElementById('logo1');
-			const logo2 = document.getElementById('logo2');
-			let isToggled = false;
-
-			if (hamburger) {
-				hamburger.addEventListener('click', function () {
-					// Toggle sidebar visibility on mobile
-					mainWrapper.classList.toggle('menu-toggle');
-
-					// Toggle logo concept for larger screens if needed, or maintain existing logic
-					if (window.innerWidth > 768) {
-						isToggled = !isToggled;
-						if (isToggled) {
-							if (logo1) logo1.style.display = 'none';
-							if (logo2) logo2.style.display = 'block';
-						} else {
-							if (logo1) logo1.style.display = 'block';
-							if (logo2) logo2.style.display = 'none';
-						}
-					}
-				});
-			}
-		});
-	</script>
 </body>
 
 
