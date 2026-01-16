@@ -44082,14 +44082,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /*# sourceMappingURL=style.css.map */
 /* Forced Sidebar Layout Fix */
-.deznav {
-    position: fixed !important;
-    top: 4.375rem !important;
-    bottom: 0 !important;
-    height: calc(100vh - 4.375rem) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    z-index: 10 !important;
+@media (min-width: 768px) {
+    .deznav {
+        position: fixed !important;
+        top: 4.375rem !important;
+        bottom: 0 !important;
+        height: calc(100vh - 4.375rem) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        z-index: 10 !important;
+    }
 }
 .deznav .deznav-scroll {
     height: 100% !important;
