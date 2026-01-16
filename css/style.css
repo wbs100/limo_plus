@@ -16524,7 +16524,7 @@ label {
 .deznav {
   width: var(--dz-sidebar-width);
   padding-bottom: 0;
-  height: calc(100% - var(--dz-header-height));
+  height: calc(100vh - var(--dz-header-height));
   position: var(--dz-sidebar-pos);
   top: var(--dz-header-height);
   padding-top: 0;
@@ -16538,7 +16538,7 @@ label {
   position: relative;
   height: 100%;
   overflow-y: scroll;
-  scrollbar-width: none;
+  scrollbar-width: auto;
 }
 
 .deznav ul {
@@ -44081,3 +44081,31 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* Forced Sidebar Layout Fix */
+.deznav {
+    position: fixed !important;
+    top: 5rem !important;
+    bottom: 0 !important;
+    height: calc(100vh - 5rem) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 10 !important;
+}
+.deznav .deznav-scroll {
+    height: 100% !important;
+    position: relative !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+    padding-bottom: 2rem !important;
+}
+/* Ensure inner content doesn't break flow */
+.deznav .metismenu {
+    display: block !important;
+    flex: 1 1 auto;
+}
+.deznav .copyright {
+    margin-top: auto;
+
+    min-height: 0; 
+}
+

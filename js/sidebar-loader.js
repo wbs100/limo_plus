@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('sidebar-content.html')
+    fetch('sidebar-content.html?v=' + Date.now())
         .then(response => response.text())
         .then(data => {
             // Find the container for the sidebar
@@ -10,9 +10,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Replace content with the loaded HTML
                 sidebarScrollContainer.innerHTML = data;
 
-                // Ensure native scrolling works in case custom scrollbar is broken by replacement
-                sidebarScrollContainer.style.height = '100%';
-                sidebarScrollContainer.style.overflowY = 'auto';
+                // Inject FontAwesome for sidebar icons
+                if (!document.getElementById('font-awesome-css')) {
+                    const link = document.createElement('link');
+                    link.id = 'font-awesome-css';
+                    link.rel = 'stylesheet';
+                    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+                    document.head.appendChild(link);
+                }
+
+                // Force triggering a resize event so that the main template script (custom.min.js) 
+                // recalculates the sidebar and content height.
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('resize'));
+                }, 100);
 
                 // --- Highlight Active Link Logic ---
                 const currentPath = window.location.pathname;
