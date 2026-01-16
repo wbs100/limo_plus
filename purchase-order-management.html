@@ -4,7 +4,7 @@
 
 <head>
 	<!--Title-->
-	<title>Limo Plus - Management System</title>
+	<title>Limo Plus - Purchase Order Management</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -1251,6 +1251,18 @@
 							<span class="nav-text">Stock Management</span>
 						</a>
 					</li>
+					<li><a href="purchase-order-management.html" class="" aria-expanded="false">
+							<div class="menu-icon">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M7 7H17" stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M7 12H17" stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M7 17H13" stroke="#90959F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
+							<span class="nav-text">Purchase Order Management</span>
+						</a>
+					</li>
 					<li>
 						<a href="buyer-management.html" class="" aria-expanded="false">
 							<div class="menu-icon">
@@ -1394,46 +1406,34 @@
 				<div class="row page-titles mx-0 mb-3">
 					<div class="col-sm-6 p-md-0">
 						<div class="welcome-text">
-							<h4>Stock Management</h4>
+							<h4>Purchase Order Management</h4>
 						</div>
 					</div>
 					<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-						<button type="button" class="btn btn-primary btn-rounded"><i class="fa fa-plus me-2"></i>Add New
-							Plantation</button>
+						<button type="button" class="btn btn-primary btn-rounded"><i class="fa fa-plus me-2"></i>Create Purchase Order</button>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="card">
 							<div class="card-header border-0 pb-0 d-block">
-								<h5 class="mb-3">Advanced Search</h5>
+								<h5 class="mb-3">Filter Purchase Orders</h5>
 								<form>
 									<div class="row">
 										<div class="col-md-3 mb-3">
-											<input type="text" class="form-control" placeholder="Plantation Name">
+											<input type="text" class="form-control" placeholder="PO Number">
 										</div>
 										<div class="col-md-3 mb-3">
-											<input type="text" class="form-control" placeholder="Location">
-										</div>
-										<div class="col-md-3 mb-3">
-											<div class="form-group mb-0">
-												<select class="default-select form-control wide">
-													<option selected>Crop Type</option>
-													<option>Carrot</option>
-													<option>Cabbage</option>
-													<option>Potato</option>
-													<option>Leeks</option>
-													<option>Tomato</option>
-												</select>
-											</div>
+											<input type="text" class="form-control" placeholder="Supplier Name">
 										</div>
 										<div class="col-md-3 mb-3">
 											<div class="form-group mb-0">
 												<select class="default-select form-control wide">
 													<option selected>Status</option>
-													<option>Active</option>
-													<option>In-Progress</option>
-													<option>Inactive</option>
+													<option>Pending</option>
+													<option>Approved</option>
+													<option>Rejected</option>
+													<option>Completed</option>
 												</select>
 											</div>
 										</div>
@@ -1449,95 +1449,82 @@
 									<table class="table table-responsive-sm">
 										<thead>
 											<tr>
-												<th>Stock ID</th>
-												<th>Harvest ID</th>
-												<th>Crop & Variety</th>
-												<th>Initial Quantity</th>
-												<th>Available Stock</th>
-												<th>Storage Location</th>
-												<th>Last Updated</th>
-												<th>Stock Status</th>
+												<th>PO Number</th>
+												<th>Supplier Name</th>
+												<th>Date</th>
+												<th>Status</th>
+												<th>Total Amount</th>
 												<th>Action</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td><strong>STK-501</strong></td>
-												<td>HRV-001</td>
-												<td>Carrot (New Kuroda)</td>
-												<td>1,200 kg</td>
-												<td>200 kg</td>
-												<td>Warehouse A</td>
-												<td>2024-06-21</td>
-												<td><span class="badge badge-warning">Low Stock</span></td>
+												<td><strong>PO-001</strong></td>
+												<td>AgriWorld Supplies</td>
+												<td>2024-07-15</td>
+												<td><span class="badge badge-warning">Pending</span></td>
+												<td>$1,250.00</td>
 												<td>
 													<div class="d-flex">
 														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
 														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
 											<tr>
-												<td><strong>STK-502</strong></td>
-												<td>HRV-002</td>
-												<td>Cabbage (Green Coronet)</td>
-												<td>850 kg</td>
-												<td>350 kg</td>
-												<td>Cold Storage 1</td>
-												<td>2024-06-25</td>
-												<td><span class="badge badge-success">In Stock</span></td>
+												<td><strong>PO-002</strong></td>
+												<td>GreenGrow Fertilizers</td>
+												<td>2024-07-14</td>
+												<td><span class="badge badge-success">Approved</span></td>
+												<td>$3,400.00</td>
 												<td>
 													<div class="d-flex">
 														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
 														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
 											<tr>
-												<td><strong>STK-503</strong></td>
-												<td>HRV-004</td>
-												<td>Leeks (Long)</td>
-												<td>500 kg</td>
-												<td>100 kg</td>
-												<td>Fresh Market Hub</td>
-												<td>2024-06-28</td>
-												<td><span class="badge badge-warning">Low Stock</span></td>
+												<td><strong>PO-003</strong></td>
+												<td>FarmMachinery Co.</td>
+												<td>2024-07-12</td>
+												<td><span class="badge badge-danger">Rejected</span></td>
+												<td>$12,000.00</td>
 												<td>
 													<div class="d-flex">
 														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
 														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
 											<tr>
-												<td><strong>STK-504</strong></td>
-												<td>HRV-005</td>
-												<td>Tomato (Thilina)</td>
-												<td>1.2 Tons</td>
-												<td>200 kg</td>
-												<td>Cold Storage 2</td>
-												<td>2024-07-01</td>
-												<td><span class="badge badge-warning">Low Stock</span></td>
+												<td><strong>PO-004</strong></td>
+												<td>SeedPlus Inc.</td>
+												<td>2024-07-10</td>
+												<td><span class="badge badge-success">Completed</span></td>
+												<td>$850.00</td>
 												<td>
 													<div class="d-flex">
 														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
 														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
 											<tr>
-												<td><strong>STK-505</strong></td>
-												<td>HRV-003</td>
-												<td>Potato (Granola)</td>
-												<td>2.5 Tons</td>
-												<td>0 kg</td>
-												<td>Warehouse B</td>
-												<td>2024-07-05</td>
-												<td><span class="badge badge-danger">Out of Stock</span></td>
+												<td><strong>PO-005</strong></td>
+												<td>EcoSafe Pesticides</td>
+												<td>2024-07-08</td>
+												<td><span class="badge badge-warning">Pending</span></td>
+												<td>$2,100.00</td>
 												<td>
 													<div class="d-flex">
 														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
 														<a href="#" class="btn btn-info shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp ms-1"><i class="fas fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
