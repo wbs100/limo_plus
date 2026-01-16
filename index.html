@@ -69,139 +69,6 @@
 			animation: pulse-green 1.5s infinite;
 		}
 	</style>
-
-	<style>
-		/* Responsive Overrides */
-		@media (max-width: 768px) {
-
-			/* Sidebar Handling */
-			.deznav {
-				left: -100%;
-				/* Hide sidebar off-screen */
-				width: 100%;
-				/* Or fixed width */
-				position: fixed;
-				transition: all 0.3s ease;
-				z-index: 999;
-				background: #fff;
-				height: 100vh;
-				top: 0;
-				margin-top: 0 !important;
-				/* Override inline style */
-				padding-top: 80px;
-				/* Space for header */
-			}
-
-			/* Show sidebar when toggled */
-			#main-wrapper.menu-toggle .deznav {
-				left: 0;
-			}
-
-			/* Content Body */
-			.content-body {
-				margin-left: 0 !important;
-				padding-top: 90px;
-				/* Clear header */
-				padding-left: 15px;
-				padding-right: 15px;
-			}
-
-			/* Header Adjustments */
-			.nav-header {
-				width: 100% !important;
-				/* Full width header bar */
-				position: fixed;
-				top: 0;
-				z-index: 1002;
-				/* Higher than sidebar */
-			}
-
-			.header {
-				width: 100% !important;
-				margin-left: 0 !important;
-				padding-left: 15px;
-				position: fixed;
-				top: 0;
-				z-index: 999;
-				background: transparent;
-			}
-
-			.brand-logo {
-				padding-left: 10px;
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
-			}
-
-			/* Hamburger Position: Top Right */
-			.nav-control {
-				right: 15px;
-				top: 15px;
-				position: fixed;
-				/* Fixed to viewport */
-				z-index: 1003;
-				/* Highest priority */
-			}
-
-			/* Hide extra header elements on small screens if they crowd */
-			.header-left {
-				display: none;
-			}
-
-			.dashboard_bar {
-				font-size: 1.2rem;
-				display: none;
-				/* Hide Title on mobile to save space */
-			}
-		}
-
-		@media (max-width: 576px) {
-
-			/* Mobile tweaks */
-			.card-header h4 {
-				font-size: 1rem;
-			}
-
-			.revenue-date span {
-				font-size: 12px;
-			}
-
-			.revenue-date h4 {
-				font-size: 1.2rem;
-			}
-
-			/* Chart adjustments to prevent overflow */
-			.chartBar,
-			#overiewChart,
-			#redial {
-				min-height: 200px;
-				width: 100% !important;
-				overflow: hidden;
-			}
-
-			canvas {
-				max-width: 100%;
-			}
-
-			/* DataTable Responsive Wrapper behavior */
-			.table-responsive {
-				display: block;
-				width: 100%;
-				overflow-x: auto;
-				-webkit-overflow-scrolling: touch;
-			}
-
-			/* Font adjustments */
-			h3 {
-				font-size: 1.5rem;
-			}
-
-			h4 {
-				font-size: 1.2rem;
-			}
-		}
-	</style>
-
 </head>
 
 <body>
@@ -262,7 +129,28 @@
 				}
 			}
 		</style>
+		<script>
+			const hamburger = document.getElementById('hamburgerBtn');
+			const logo1 = document.getElementById('logo1');
+			const logo2 = document.getElementById('logo2');
 
+			let isToggled = false;
+
+			hamburger.addEventListener('click', () => {
+
+				if (window.innerWidth <= 768) return;
+
+				isToggled = !isToggled;
+
+				if (isToggled) {
+					logo1.style.display = 'none';
+					logo2.style.display = 'block';
+				} else {
+					logo1.style.display = 'block';
+					logo2.style.display = 'none';
+				}
+			});
+		</script>
 		<!--**********************************
             Nav header end
         ***********************************-->
@@ -1118,13 +1006,13 @@
 		<div class="content-body">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xl-9 col-xxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="col-xl-9 col-xxl-12">
 						<div class="row">
 							<div class="col-xl-12">
 								<div class="row">
 									<div class="col-xl-6">
 										<div class="row">
-											<div class="col-xl-6 col-md-6 col-12">
+											<div class="col-xl-6 col-sm-6">
 												<div class="card bg-primary text-white">
 													<div class="card-header border-0 flex-wrap">
 														<div class="revenue-date">
@@ -1167,7 +1055,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-md-6 col-12">
+											<div class="col-xl-6 col-sm-6">
 												<div class="card bg-secondary text-white">
 													<div class="card-header border-0">
 														<div class="revenue-date">
@@ -1215,7 +1103,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-md-6 col-12">
+											<div class="col-xl-6 col-sm-6">
 												<div class="card">
 													<div class="card-body depostit-card">
 														<div
@@ -1243,7 +1131,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-md-6 col-12">
+											<div class="col-xl-6 col-sm-6">
 												<div class="card same-card">
 													<div class="card-body depostit-card p-0">
 														<div
@@ -1266,7 +1154,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-3 col-md-6 col-12">
+									<div class="col-xl-3 col-sm-6">
 										<div class="card">
 											<div class="card-header border-0 pb-0">
 												<h4 class="heading mb-0">Stock Alerts</h4>
@@ -1297,7 +1185,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-3 col-md-6 col-12">
+									<div class="col-xl-3 col-sm-6">
 										<div class="card">
 											<div class="card-body">
 												<div id="redial"></div>
@@ -1498,37 +1386,6 @@
 		});
 	</script>
 
-
-
-	<script>
-		// Responsive Hamburger Logic
-		document.addEventListener("DOMContentLoaded", function () {
-			const hamburger = document.getElementById('hamburgerBtn');
-			const mainWrapper = document.getElementById('main-wrapper');
-			const logo1 = document.getElementById('logo1');
-			const logo2 = document.getElementById('logo2');
-			let isToggled = false;
-
-			if (hamburger) {
-				hamburger.addEventListener('click', function () {
-					// Toggle sidebar visibility on mobile
-					mainWrapper.classList.toggle('menu-toggle');
-
-					// Toggle logo concept for larger screens if needed, or maintain existing logic
-					if (window.innerWidth > 768) {
-						isToggled = !isToggled;
-						if (isToggled) {
-							if (logo1) logo1.style.display = 'none';
-							if (logo2) logo2.style.display = 'block';
-						} else {
-							if (logo1) logo1.style.display = 'block';
-							if (logo2) logo2.style.display = 'none';
-						}
-					}
-				});
-			}
-		});
-	</script>
 </body>
 
 
